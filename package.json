@@ -4,7 +4,7 @@
   "description": "Simple link shortening app with telemetery.",
   "main": "main.js",
   "scripts": {
-    "test": "babel-watch src/main.ts"
+    "test": "babel-watch src/main.js"
   },
   "repository": {
     "type": "git",
