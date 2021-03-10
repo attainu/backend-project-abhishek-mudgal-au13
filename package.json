@@ -1,0 +1,43 @@
+{
+  "name": "skindle",
+  "version": "1.0.0",
+  "description": "Simple link shortening app with telemetery.",
+  "main": "main.js",
+  "scripts": {
+    "test": "babel-watch src/main.js",
+    "build": "babel src -d build",
+    "start": "node build/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attainu/backend-project-abhishek-mudgal-au13.git"
+  },
+  "author": "Abhishek Mudgal",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/attainu/backend-project-abhishek-mudgal-au13/issues"
+  },
+  "homepage": "https://github.com/attainu/backend-project-abhishek-mudgal-au13#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-ip": "^1.0.4",
+    "express-simple-geoip": "^0.1.1",
+    "express-validator": "^6.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.19",
+    "package.json": "^2.0.1",
+    "ua-parser-js": "^0.7.24"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/node": "^7.13.0",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "@babel/preset-env": "^7.13.9",
+    "babel-polyfill": "^6.26.0",
+    "babel-watch": "^7.4.0"
+  }
+}
