@@ -4,11 +4,11 @@
   "description": "Simple link shortening app with telemetery.",
   "main": "main.js",
   "scripts": {
-    "test": "babel-watch src/main.js",
-    "start": "npm run build && node build/main.js",
+    "test": "babel-watch ./src/main.js",
+    "start": "npm run build && node ./build/main.js",
     "build": "npm run clean && npm run babel-build",
     "babel-build": "babel -d ./build ./src -s",
-    "clean": "mkdir build"
+    "clean": "rm -rf ./build && mkdir build"
   },
   "repository": {
     "type": "git",
