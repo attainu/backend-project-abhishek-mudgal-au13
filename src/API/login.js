@@ -57,7 +57,7 @@ router.post(
             //Logged in successfully, token is created
             jwt.sign(
                 {user: {id: user.id}},
-                process.env.JWT_KEY,
+                process.env.JWT_KEY || `jwt_secret`,
                 (err, token)=>{
                     if(err) throw err;
                     res.status(200).json({
