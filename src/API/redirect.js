@@ -64,7 +64,7 @@ router.get(
 
             const test = await Telemetery.findOneAndUpdate(
                 { link: req.params.link },
-                {$inc : { [browserkey] : 1, [oskey] : 1, [devicekey] : 1 }}
+                { $inc : { clicks: 1, [browserkey] : 1, [oskey] : 1, [devicekey] : 1 } }
               )
             
             test

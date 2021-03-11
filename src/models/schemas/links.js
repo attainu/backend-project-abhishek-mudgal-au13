@@ -8,6 +8,7 @@ const telemetery = mongoose.Schema({
     creator: {
         type: mongoose.Schema.Types.ObjectId
     },
+    clicks: Number,
     browserType: {
         firefox: Number,
         chrome: Number,
