@@ -3,6 +3,7 @@ import { body, validationResult } from 'express-validator'
 import User from '../models/schemas/user'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import auth from '../middleware/auth';
 
 
 const router = express.Router()
@@ -70,6 +71,28 @@ router.post(
         } catch (error) {
             console.log(error)
             return res.status(500).send("Internal Server Error!")
+        }
+    }
+)
+
+
+router.get(
+    '/profile',
+    auth,
+    async (req, res) => {
+        try {
+
+            let user = await User.findById(req.user.id)
+
+            res.status(200).json({
+                data: user,
+                error: [],
+                msg: "Profile Fetched"
+            })
+
+        } catch (error) {
+            console.log(error)
+            return res.status(500).send("Internal Server error")
         }
     }
 )
