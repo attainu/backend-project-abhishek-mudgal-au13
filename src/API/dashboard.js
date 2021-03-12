@@ -42,7 +42,8 @@ router.post(
             let telemetery = new Telemetery({
                 link: link,
                 originalLink: req.body.originalLink,
-                creator: req.user.id
+                creator: req.user.id,
+                date: Date.now()
             })
 
             telemetery.save()
@@ -56,6 +57,35 @@ router.post(
         } catch (error) {
             console.log(error)
             return res.status(500).send('Internal Server Error')
+        }
+    }
+)
+
+router.get(
+    '/dashboard',
+    auth,
+    async (req, res) => {
+        try {
+
+            /// By default we're fetching the data and sorting by their creation date
+            const telemetery = await Telemetery.find({creator: req.user.id}).sort({date: -1})
+            if(!telemetery){
+                res.sendStatus(400).json({
+                    data: {},
+                    error: [],
+                    msg: 'No links created by user'
+                })
+            }
+            return res.status(200).json({
+                data: telemetery,
+                error: [],
+                msg: 'User created links fetched successfully.'
+            })
+
+
+        } catch (error) {
+            console.log(error)
+            return res.sendStatus(500).send('Internal Server Error!')
         }
     }
 )

@@ -33,6 +33,7 @@ const telemetery = mongoose.Schema({
         other: Number
     },
     location: String,
+    date: Date
 
 })
 
