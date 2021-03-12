@@ -26,6 +26,9 @@ app.use('/api', signup)
 app.use('/api', login)
 app.use('/api', dashboard)
 app.use('/', redirect)
+app.get('/', (req, res) => {
+    res.redirect('https://skindle.herokuapp.com/9gf108')
+})
 
 app.listen(PORT, ()=>{
     console.log(`Launched the server at http://localhost:${PORT}`)
