@@ -29,7 +29,7 @@ router.post(
         }
 
 
-        //Link is valid BSDK now we will shorten the shit
+        //Links is valid//shortening the link
         try {
             
             const shorten = (length=6)=>{

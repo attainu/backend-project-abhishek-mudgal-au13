@@ -80,5 +80,3 @@ router.get(
 )
 
 export {router as redirect}
-
-
